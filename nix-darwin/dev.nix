@@ -1,8 +1,6 @@
 { pkgs, config, ... }:
-{
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
 
+{
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [
@@ -87,7 +85,7 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   # Set Git commit hash for darwin-version.
-  system.configurationRevision = self.rev or self.dirtyRev or null;
+  system.configurationRevision = config.rev or config.dirtyRev or null;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
