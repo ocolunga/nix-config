@@ -49,6 +49,7 @@
               "aerospace"
               "ghostty"
               "obsidian"
+              "zoom"
             ];
             masApps = {
               "Microsoft Word" = 462054704;
@@ -60,6 +61,7 @@
               "WhatsApp" = 310633997;
               "Slack" = 803453959;
               "Bitwarden" = 1352778147;
+              "WireGuard" = 1451685025;
             };
             onActivation.cleanup = "zap";
             onActivation.autoUpdate = true;
@@ -93,11 +95,13 @@
 
           # Add Rosetta installation script
           system.activationScripts.extraActivation.text = ''
-            softwareupdate --install-rosetta --agree-to-license
+            if ! /usr/bin/pgrep oahd >/dev/null 2>&1; then
+              softwareupdate --install-rosetta --agree-to-license
+            fi
           '';
 
           # Enable Touch ID for sudo authentication
-          security.pam.enableSudoTouchIdAuth = true;
+          security.pam.services.sudo_local.touchIdAuth = true;
 
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
