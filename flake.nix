@@ -1,5 +1,5 @@
 {
-  description = "NixOS and Nix-Darwin configuration for all my systems";
+  description = "My NixOS and Nix-Darwin configurations";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -9,16 +9,15 @@
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nix-darwin,
       nixpkgs,
       nix-homebrew,
+      ...
     }:
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#mac-dev
-      darwinConfigurations."mac-dev" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."dev" = nix-darwin.lib.darwinSystem {
         modules = [
           ./nix-darwin/dev.nix
           nix-homebrew.darwinModules.nix-homebrew
