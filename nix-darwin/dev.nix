@@ -31,6 +31,7 @@
       "obsidian"
       "zoom"
       "clickup"
+      "font-monaspace"
     ];
     masApps = {
       # "Microsoft Word" = 462054704;
@@ -49,9 +50,9 @@
     onActivation.upgrade = true;
   };
 
-  fonts.packages = [
-    pkgs.monaspace
-  ];
+  # fonts.packages = [
+  #   pkgs.monaspace
+  # ];
 
   system.activationScripts.applications.text =
     let
@@ -96,7 +97,7 @@
         "/Applications/Obsidian.app"
         "/Applications/Ghostty.app"
         "/Applications/Visual Studio Code.app"
-        "/Users/ocolunga/Applications/Edge Apps/YouTube.app"
+        "/Users/ocolunga/Applications/YouTube.app"
         #TODO create a symlink for the youtube web app
         # "System/Applications/Music.app"
         "/System/Applications/App Store.app"
