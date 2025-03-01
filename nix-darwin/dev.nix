@@ -73,6 +73,13 @@
       done
     '';
 
+  system.defaults = {
+    NSGlobalDomain = {
+      ApplePressAndHoldEnabled = false;
+    };
+  };
+    
+
   # Add Rosetta installation script
   system.activationScripts.extraActivation.text = ''
     if ! /usr/bin/pgrep oahd >/dev/null 2>&1; then
