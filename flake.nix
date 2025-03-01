@@ -26,6 +26,7 @@
               enable = true;
               enableRosetta = true;
               user = "ocolunga";
+              autoMigrate = true;
             };
           }
         ];

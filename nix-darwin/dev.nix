@@ -9,37 +9,39 @@
     pkgs.mkalias
     pkgs.nixfmt-rfc-style
     pkgs.uv
+    pkgs.zsh
   ];
 
   homebrew = {
     enable = true;
     taps = [
-      "nikitabobko/tap"
-      "FelixKratz/formulae"
+      # "FelixKratz/formulae" # borders
     ];
     brews = [
       "mas"
-      "borders"
+      # "borders"
       "mactop"
+      "jandedobbeleer/oh-my-posh/oh-my-posh"
     ];
     casks = [
       "microsoft-edge"
       "visual-studio-code"
-      "aerospace"
+      # "nikitabobko/tap/aerospace"
       "ghostty"
       "obsidian"
       "zoom"
     ];
     masApps = {
-      "Microsoft Word" = 462054704;
-      "Microsoft Excel" = 462058435;
-      "Microsoft PowerPoint" = 462062816;
-      "Microsoft Outlook" = 985367838;
-      "Pasty" = 1544620654;
-      "WhatsApp" = 310633997;
-      "Slack" = 803453959;
-      "Bitwarden" = 1352778147;
-      "WireGuard" = 1451685025;
+      # "Microsoft Word" = 462054704;
+      # "Microsoft Excel" = 462058435;
+      # "Microsoft PowerPoint" = 462062816;
+      # "Microsoft Outlook" = 985367838;
+      # "Microsoft Onedrive" = 823766827;
+      # "Pasty" = 1544620654;
+      # "WhatsApp" = 310633997;
+      # "Slack" = 803453959;
+      # "Bitwarden" = 1352778147;
+      # "WireGuard" = 1451685025;
     };
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
