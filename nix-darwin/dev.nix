@@ -30,6 +30,7 @@
       "ghostty"
       "obsidian"
       "zoom"
+      "clickup"
     ];
     masApps = {
       # "Microsoft Word" = 462054704;
@@ -76,9 +77,33 @@
   system.defaults = {
     NSGlobalDomain = {
       ApplePressAndHoldEnabled = false;
+      AppleShowAllExtensions = true;
+      # "com.apple.keyboard.fnState" = true;
+    };
+    WindowManager = {
+      GloballyEnabled = true;
+    };
+    dock = {
+      persistent-apps = [
+        "/System/Applications/Launchpad.app"
+        "/Applications/Microsoft Edge.app"
+        # "/System/Applications/Messages.app"
+        "/Applications/WhatsApp.app"
+        "/Applications/Slack.app"
+        "/System/Applications/Mail.app"
+        "/System/Applications/Calendar.app"
+        "/Applications/ClickUp.app"
+        "/Applications/Obsidian.app"
+        "/Applications/Ghostty.app"
+        "/Applications/Visual Studio Code.app"
+        "/Users/ocolunga/Applications/Edge Apps/YouTube.app"
+        #TODO create a symlink for the youtube web app
+        # "System/Applications/Music.app"
+        "/System/Applications/App Store.app"
+        "/System/Applications/System Settings.app"
+      ];
     };
   };
-    
 
   # Add Rosetta installation script
   system.activationScripts.extraActivation.text = ''
