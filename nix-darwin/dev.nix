@@ -32,6 +32,8 @@
       "zoom"
       "clickup"
       "font-monaspace"
+      "steam"
+      "whisky"
     ];
     masApps = {
       # "Microsoft Word" = 462054704;
